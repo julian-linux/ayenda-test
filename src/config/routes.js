@@ -1,15 +1,15 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import Loadable from 'react-loadable';
+import React from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import Loadable from 'react-loadable'
 
 // eslint-disable-next-line react/prop-types
 const Loading = ({ error = null }) => {
   if (error) {
     // eslint-disable-next-line no-console
-    console.log('error', error);
+    console.log('error', error)
   }
-  return '';
-};
+  return ''
+}
 
 const Genres = Loadable({
   loader: () => import('pages/genres'),
@@ -43,12 +43,12 @@ const NotFound = Loadable({
 
 const Routes = () => (
   <Switch>
-    <Route path="/genres/:genre_name/random_song" exact component={RandomSong} />
-    <Route path="/albums/:id/songs" exact component={Songs} />
-    <Route path="/artists/:id/albums" exact component={Albums} />
-    <Route path="/artists" exact component={Artists} />
-    <Route path="/genres" exact component={Genres} />
-    <Route path="/" exact component={Genres} />
+    <Route path='/genres/:genre_name/random_song' exact component={RandomSong} />
+    <Route path='/albums/:id/songs' exact component={Songs} />
+    <Route path='/artists/:id/albums' exact component={Albums} />
+    <Route path='/artists' exact component={Artists} />
+    <Route path='/genres' exact component={Genres} />
+    <Route path='/' exact component={Artists} />
     <Route component={NotFound} />
   </Switch>
 )
