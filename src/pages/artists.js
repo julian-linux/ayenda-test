@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { fetchAction } from 'actions'
-// import { selectRouteData } from 'selectors'
-// import isEmpty from 'lodash/isEmpty'
+import React from 'react'
+import { Row } from 'reactstrap'
+import Loading from 'components/loading'
+import Artist from 'components/artist'
 import { useData } from 'hooks'
-const route = 'artists'
 
 const Artists = () => {
-  const data = useData(route)
-  console.log('data', data)
+  const data = useData('artists')
 
-  return (<div>Artists</div>)
+  if (!data.data || data.loading) {
+    return <Loading />
+  }
+
+  return (
+    <Row>
+      {data.data.map((artist, key) => <Artist key={`artist-${key}`} {...artist} />)}
+    </Row>
+  )
 }
-
-Artists.route = 'artis'
 
 export default Artists

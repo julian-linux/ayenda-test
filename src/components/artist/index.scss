@@ -1,0 +1,11 @@
+.artist-component {
+  &-container {
+    position: relative;
+  }
+
+  &-name {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+  }
+}

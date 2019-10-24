@@ -12,7 +12,7 @@ export const useData = (route) => {
     if (isEmpty(reducerData)) {
       fetchAction(dispatch)(route)
     }
-  }, [reducerData])
+  }, [reducerData, dispatch, route])
 
   return reducerData
 }

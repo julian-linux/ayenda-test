@@ -4,21 +4,15 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem,
-  // NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavItem
 } from 'reactstrap'
 
 const NavComponent = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Navbar color='light' light expand='md'>
+    <Navbar color='dark' dark expand='md'>
       <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
       <Collapse isOpen={isOpen} navbar>
         <Nav navbar>
