@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "yarn lint && react-scripts test",
+    "test:coverage": "yarn test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "standard --verbose | snazzy"
   },
@@ -28,7 +29,7 @@
     "extends": [
       "react-app",
       "standard"
-    ]    
+    ]
   },
   "browserslist": {
     "production": [
@@ -45,6 +46,7 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "jest-enzyme": "^7.1.1",
     "node-sass": "^4.12.0",
     "react-test-renderer": "^16.11.0",
     "snazzy": "^8.0.0",
@@ -54,7 +56,27 @@
     "globals": [
       "it",
       "describe",
-      "fetch"
+      "fetch",
+      "expect"
+    ]
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/serviceWorker.js",
+      "!**/index.js",
+      "src/types.js",
+      "src/actionCreators.js"
     ]
   }
 }
