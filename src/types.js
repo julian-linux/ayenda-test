@@ -8,5 +8,10 @@ export default keyMirror({
   },
   SELECT: {
     SONG: null
+  },
+  RANDOM_SONG: {
+    REQUEST: null,
+    SUCCESS: null,
+    ERROR: null
   }
 })

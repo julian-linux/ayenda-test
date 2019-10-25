@@ -12,6 +12,7 @@ const Songs = () => {
   const dispatch = useDispatch()
   const { pathname } = useLocation()
   const data = useData(pathname)
+
   const onSelectSong = song => dispatchActionSelectSong(dispatch)(song)
 
   if (!data.data || data.loading) {

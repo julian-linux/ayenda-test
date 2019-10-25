@@ -12,12 +12,12 @@ const NavComponent = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Navbar className='bg-light' expand='lg'>
+    <Navbar className='bg-light mb-2' expand='lg'>
       <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
       <Collapse isOpen={isOpen} navbar>
         <Nav navbar>
-          <NavItem className='mr-2'>
-            <NavLink to='/artists'>Artist</NavLink>
+          <NavItem className='mr-3'>
+            <NavLink to='/artists'>Home/Artists</NavLink>
           </NavItem>
           <NavItem className='mr-2'>
             <NavLink to='/genres'>Genres</NavLink>

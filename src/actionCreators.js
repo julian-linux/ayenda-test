@@ -12,4 +12,13 @@ export const fetchDataErrorAC = (error, route) => ({
   payload: { error, route }
 })
 
-export const selectSongAc = song => ({ type: TYPES.SELECT.SONG, payload: { song } })
+export const selectSongAC = song => ({ type: TYPES.SELECT.SONG, payload: { song } })
+
+export const fetchRandomSongAC = route => ({ type: TYPES.RANDOM_SONG.REQUEST })
+
+export const fetchRandomSongSuccessAC = (data, route) => ({ type: TYPES.RANDOM_SONG.SUCCESS })
+
+export const fetchRandomSongErrorAC = (error, route) => ({
+  type: TYPES.RANDOM_SONG.ERROR,
+  payload: { error, route }
+})
