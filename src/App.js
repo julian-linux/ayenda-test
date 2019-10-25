@@ -5,23 +5,25 @@ import { Container, Row, Col } from 'reactstrap'
 import Routes from 'config/routes'
 import store from 'config/store'
 import Nav from 'components/nav'
+import Player from 'components/player'
 
 const App = () => (
   <Provider store={store}>
-    <Router>
-      <Container>
+    <Container className='pb-5'>
+      <Router>
         <Row>
           <Col>
             <Nav />
           </Col>
         </Row>
-        <Row>
-          <Col className='p-4'>
+        <Row className='pb-5'>
+          <Col className=' '>
             <Routes />
           </Col>
         </Row>
-      </Container>
-    </Router>
+      </Router>
+      <Player />
+    </Container>
   </Provider>
 )
 

@@ -5,5 +5,8 @@ export default keyMirror({
     REQUEST: null,
     SUCCESS: null,
     ERROR: null
+  },
+  SELECT: {
+    SONG: null
   }
 })

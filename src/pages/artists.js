@@ -12,7 +12,7 @@ const Artists = () => {
   }
 
   return (
-    <Row>
+    <Row className='justify-content-center'>
       {data.data.map((artist, key) => <Artist key={`artist-${key}`} {...artist} />)}
     </Row>
   )

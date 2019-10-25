@@ -1,11 +1,23 @@
-.artist-component {
+.artist{
   &-container {
-    position: relative;
+    a {
+      font-weight: bolder;
+      text-decoration: none;
+    }
   }
 
-  &-name {
-    position: absolute;
-    top: 50%;
-    left: 33%;
+  &-image {
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    line-height: 150px;
+    margin: auto;
+    width: 60%;
+
+    a {
+      
+    }
   }
 }

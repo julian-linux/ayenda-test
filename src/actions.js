@@ -1,7 +1,7 @@
 import fetch from 'config/api'
 
 import {
-  fetchDataAC, fetchDataSuccessAC, fetchDataErrorAC
+  fetchDataAC, fetchDataSuccessAC, fetchDataErrorAC, selectSongAc
 } from 'actionCreators'
 
 export const fetchAction = dispatch => async (route) => {
@@ -12,4 +12,8 @@ export const fetchAction = dispatch => async (route) => {
   } catch (error) {
     dispatch(fetchDataErrorAC(error, route))
   }
+}
+
+export const dispatchActionSelectSong = dispatch => async (song) => {
+  dispatch(selectSongAc(song))
 }

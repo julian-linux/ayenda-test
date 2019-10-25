@@ -11,3 +11,5 @@ export const fetchDataErrorAC = (error, route) => ({
   type: TYPES.DATA.ERROR,
   payload: { error, route }
 })
+
+export const selectSongAc = song => ({ type: TYPES.SELECT.SONG, payload: { song } })

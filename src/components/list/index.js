@@ -1,30 +1,24 @@
 import React from 'react'
-import { ListGroup, ListGroupItem } from 'reactstrap'
-// import { NavLink } from 'react-router-dom'
-// import './index.scss'
+import { ListGroup, ListGroupItem, Button, Row, Col } from 'reactstrap'
 
-const List = ({ data }) => {
-  // let textClass = ''
-  // let link = `artists/${id}/albums`
-  // if (isAlbum) {
-  //   textClass = 'artist-component-name'
-  //   link = `album/${id}/songs`
-  // }
-  return (
-    <ListGroup>
-      {data.map(({ name }, key) => (
-        <ListGroupItem key={`item-${key}`}>
-          {name}
-        </ListGroupItem>
-      ))}
-    </ListGroup>
-    // <Col className='m-2 artist-component-container text-center'>
-    //   <NavLink to={link}>
-    //     <img width='200px' height='200px' className='rounded-circle' src={image} alt={name} />
-    //     <h6 className={`text-white ${textClass}`}>{name}</h6>
-    //   </NavLink>
-    // </Col>
-  )
-}
+const List = ({ data, isAlbum, id, onSelectItem }) => (
+  <ListGroup>
+    {data.map(({ name, preview_url, spotify_url }, key) => (
+      <ListGroupItem key={`item-${key}`} className='list-item align-middle'>
+        <Row>
+          <Col sm='4'>
+            <audio controls>
+              <source src={preview_url} type='audio/mpeg' />
+            </audio>
+          </Col>
+          <Col sm='8'>
+            <Button onClick={() => onSelectItem(spotify_url)} color='link' size='lg'>{name}</Button>
+          </Col>
+        </Row>
+
+      </ListGroupItem>
+    ))}
+  </ListGroup>
+)
 
 export default List

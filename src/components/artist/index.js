@@ -11,10 +11,11 @@ const ArtistImg = ({ id, image, name, isAlbum = false }) => {
     link = `/albums/${id}/songs`
   }
   return (
-    <Col className='m-2 artist-component-container text-center'>
-      <NavLink to={link}>
-        <img width='200px' height='200px' className='rounded-circle' src={image} alt={name} />
-        <h6 className={`text-white ${textClass}`}>{name}</h6>
+    <Col sm='3' className='p-2 text-center align-middle artist-container'>
+      <NavLink to={link} className={`text-white text-bold ${textClass}`}>
+        <div className='artist-image' style={{ backgroundImage: `url("${image}")` }}>
+          <span>{name}</span>
+        </div>
       </NavLink>
     </Col>
   )

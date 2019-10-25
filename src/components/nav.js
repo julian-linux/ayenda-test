@@ -12,7 +12,7 @@ const NavComponent = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Navbar color='dark' dark expand='md'>
+    <Navbar className='bg-light' expand='lg'>
       <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
       <Collapse isOpen={isOpen} navbar>
         <Nav navbar>

@@ -1,7 +1,8 @@
 import TYPES from 'types'
 
 export const initialState = {
-  endpoints: {}
+  endpoints: {},
+  selectedSong: ''
 }
 
 const initialPayload = {
@@ -14,6 +15,8 @@ const setReducerData = (state, payload, loading = false) => {
   const endpoints = {
     ...state.endpoints
   }
+
+  let selectedSong = state.selectedSong
 
   if (payload.route) {
     endpoints[payload.route] = {
@@ -29,9 +32,13 @@ const setReducerData = (state, payload, loading = false) => {
     }
   }
 
+  if (payload.song) {
+    selectedSong = payload.song
+  }
+
   return {
-    ...state,
-    endpoints
+    endpoints,
+    selectedSong
   }
 }
 
@@ -43,6 +50,8 @@ const genresReducer = (state = initialState, { type, payload = initialPayload })
       return setReducerData(state, payload)
     case TYPES.DATA.ERROR:
       return setReducerData(state, payload, true)
+    case TYPES.SELECT.SONG:
+      return setReducerData(state, payload)
     default:
       return state
   }
