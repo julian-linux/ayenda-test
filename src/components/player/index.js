@@ -59,9 +59,9 @@ const Player = () => {
         <PopoverHeader>Sugerencias</PopoverHeader>
         <PopoverBody>
           <ListGroup>
-            {suggestedSongs.map(({ name, spotify_url }, idx) => (
+            {suggestedSongs.map(({ name, spotify_url: spotifyUrl }, idx) => (
               <ListGroupItem key={`suggestion-${idx}`}>
-                <Button color='link' onClick={() => selectSuggestedSong(spotify_url)}>
+                <Button color='link' onClick={() => selectSuggestedSong(spotifyUrl)}>
                   {name}
                 </Button>
               </ListGroupItem>))}

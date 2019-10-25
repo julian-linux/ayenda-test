@@ -3,19 +3,19 @@ import { ListGroup, ListGroupItem, Button, Row, Col } from 'reactstrap'
 
 const List = ({ data, isAlbum, id, onSelectItem }) => (
   <ListGroup>
-    {data.map(({ name, preview_url, spotify_url }, key) => (
+    {data.map(({ name, preview_url: previewUrl, spotify_url: spotifyUrl }, key) => (
       <ListGroupItem key={`item-${key}`} className='list-item align-middle'>
         <Row>
           <Col sm='4'>
-            {preview_url ? (
+            {previewUrl ? (
               <audio controls>
-                <source src={preview_url} type='audio/mpeg' />
+                <source src={previewUrl} type='audio/mpeg' />
               </audio>
             ) : 'No hay preview de Canción'}
 
           </Col>
           <Col sm='8'>
-            <Button onClick={() => onSelectItem(spotify_url)} color='link' size='lg'>{name}</Button>
+            <Button onClick={() => onSelectItem(spotifyUrl)} color='link' size='lg'>{name}</Button>
           </Col>
         </Row>
 

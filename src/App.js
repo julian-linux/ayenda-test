@@ -17,7 +17,7 @@ const App = () => (
           </Col>
         </Row>
         <Row className='pb-5'>
-          <Col className=' '>
+          <Col>
             <Routes />
           </Col>
         </Row>
