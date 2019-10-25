@@ -31,11 +31,6 @@ const Songs = Loadable({
   loading: Loading
 })
 
-const RandomSong = Loadable({
-  loader: () => import('pages/random-song'),
-  loading: Loading
-})
-
 const NotFound = Loadable({
   loader: () => import('pages/not-found'),
   loading: Loading
@@ -43,7 +38,6 @@ const NotFound = Loadable({
 
 const Routes = () => (
   <Switch>
-    <Route path='/genres/:genre_name/random_song' exact component={RandomSong} />
     <Route path='/albums/:id/songs' exact component={Songs} />
     <Route path='/artists/:id/albums' exact component={Albums} />
     <Route path='/artists' exact component={Artists} />

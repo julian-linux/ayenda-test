@@ -21,8 +21,8 @@ const App = () => (
             <Routes />
           </Col>
         </Row>
+        <Player />
       </Router>
-      <Player />
     </Container>
   </Provider>
 )
