@@ -1,5 +1,5 @@
 
-const BASE_URL = 'http://rubytify-ayenda.herokuapp.com/api/v1/'
+const BASE_URL = 'https://rubytify-ayenda.herokuapp.com/api/v1/'
 
 export default async (url) => {
   try {
