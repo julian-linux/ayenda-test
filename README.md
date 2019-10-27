@@ -1,3 +1,7 @@
+https://adoring-hopper-d38cc0.netlify.com/#/
+https://julian-linux.github.io/ayenda-test/ (maybe not working yer)
+
+--------------------------------------------------------------------
 # React Test
 
 You are going to fetch information from `Rubitify` API: https://rubytify.herokuapp.com/api/v1
