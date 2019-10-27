@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import { Container, Row, Col } from 'reactstrap'
 import Routes from 'config/routes'
 import store from 'config/store'
