@@ -55,7 +55,7 @@ const Player = () => {
 
   const suggestions = !isLoading && !isEmpty(suggestedSongs) && (
     <>
-      <Popover isOpen={popoverOpen} trigger='focus' placement='left' target='suggestions'>
+      <Popover isOpen={popoverOpen} trigger='focus' placement='top' target='suggestions'>
         <PopoverHeader>Sugerencias</PopoverHeader>
         <PopoverBody>
           <ListGroup>

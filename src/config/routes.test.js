@@ -32,9 +32,11 @@ describe('Routes configuration ', () => {
 
   it('should render Genres Page if path is setted', async () => {
     const component = mount(
-      <MemoryRouter initialEntries={['/genres']}>
-        <RoutesConfig />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['genres']}>
+          <RoutesConfig />
+        </MemoryRouter>
+      </Provider>
     )
 
     expect(component.contains(GenresPage)).toBeTruthy()

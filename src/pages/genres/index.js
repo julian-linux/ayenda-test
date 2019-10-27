@@ -1,10 +1,18 @@
 import React from 'react'
-// import { fetchAction } from 'actions'
+import ListSongs from 'components/list-genres'
+import Loading from 'components/loading'
+import { useData } from 'hooks'
 
 const Genres = () => {
-  // const data = fetchAction('genres')
+  const data = useData('genres')
 
-  return (<div>Genres</div>)
+  if (!data.data || data.loading) {
+    return <Loading />
+  }
+
+  return (
+    <ListSongs data={data.data} />
+  )
 }
 
 export default Genres

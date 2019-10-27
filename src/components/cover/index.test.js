@@ -7,8 +7,8 @@ describe('Cover Component', () => {
     shallow(<Cover />)
   })
 
-  it('should have class "artist-component-name" if isAlbum prop', () => {
+  it('should NOT have class "cover-valign" if isAlbum prop', () => {
     const wrapper = shallow(<Cover isAlbum id={0} image='testImg' name='testName' />)
-    expect(wrapper.find('.artist-component-name')).toHaveLength(1)
+    expect(wrapper.find('.cover-valign').length).toEqual(0)
   })
 })

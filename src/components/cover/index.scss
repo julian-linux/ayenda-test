@@ -1,4 +1,4 @@
-.artist{
+.cover{
   &-container {
     a {
       font-weight: bolder;
@@ -12,12 +12,16 @@
     background-position: center;
     background-size: cover;
     height: 150px;
-    line-height: 150px;
     margin: auto;
-    width: 60%;
+    width: 150px;
+  }
 
-    a {
-      
-    }
+  &-valign {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &-name {
+    color: white;
   }
 }
