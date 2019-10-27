@@ -3,7 +3,7 @@ import { Col } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 import './index.scss'
 
-const ArtistImg = ({ id, image, name, isAlbum = false }) => {
+const Cover = ({ id, image, name, isAlbum = false }) => {
   let textClass = ''
   let link = `/artists/${id}/albums`
   if (isAlbum) {
@@ -21,4 +21,4 @@ const ArtistImg = ({ id, image, name, isAlbum = false }) => {
   )
 }
 
-export default ArtistImg
+export default Cover

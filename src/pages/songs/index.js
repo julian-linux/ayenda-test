@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap'
 import { useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import Loading from 'components/loading'
-import List from 'components/list'
+import ListSongs from 'components/list-songs'
 
 import { useData } from 'hooks'
 import { dispatchActionSelectSong } from 'actions'
@@ -22,7 +22,7 @@ const Songs = () => {
   return (
     <Row>
       <Col>
-        <List data={data.data} onSelectItem={onSelectSong} />
+        <ListSongs data={data.data} onSelectItem={onSelectSong} />
       </Col>
     </Row>
   )

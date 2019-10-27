@@ -1,7 +1,7 @@
 import React from 'react'
 import { ListGroup, ListGroupItem, Button, Row, Col } from 'reactstrap'
 
-const List = ({ data, isAlbum, id, onSelectItem }) => (
+const ListSongs = ({ data, isAlbum, id, onSelectItem }) => (
   <ListGroup>
     {data.map(({ name, preview_url: previewUrl, spotify_url: spotifyUrl }, key) => (
       <ListGroupItem key={`item-${key}`} className='list-item align-middle'>
@@ -24,4 +24,4 @@ const List = ({ data, isAlbum, id, onSelectItem }) => (
   </ListGroup>
 )
 
-export default List
+export default ListSongs

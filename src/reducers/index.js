@@ -42,14 +42,12 @@ const setReducerData = (state, payload, loading = false) => {
   }
 }
 
-const genresReducer = (state = initialState, { type, payload = initialPayload }) => {
+const rootReducer = (state = initialState, { type, payload = initialPayload }) => {
   switch (type) {
     case TYPES.DATA.REQUEST:
       return setReducerData(state, payload, true)
     case TYPES.DATA.SUCCESS:
-      return setReducerData(state, payload)
     case TYPES.DATA.ERROR:
-      return setReducerData(state, payload, true)
     case TYPES.SELECT.SONG:
       return setReducerData(state, payload)
     default:
@@ -57,4 +55,4 @@ const genresReducer = (state = initialState, { type, payload = initialPayload })
   }
 }
 
-export default genresReducer
+export default rootReducer

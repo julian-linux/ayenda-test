@@ -1,15 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Loadable from 'react-loadable'
-
-// eslint-disable-next-line react/prop-types
-const Loading = ({ error = null }) => {
-  if (error) {
-    // eslint-disable-next-line no-console
-    console.log('error', error)
-  }
-  return ''
-}
+import Loading from 'components/loading'
 
 const Genres = Loadable({
   loader: () => import('pages/genres'),

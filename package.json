@@ -20,8 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn lint && react-scripts test",
-    "test:coverage": "yarn test --coverage --watchAll=false",
+    "test": " react-scripts test",
+    "test:coverage": "yarn lint && yarn test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "standard --verbose | snazzy"
   },
@@ -44,9 +44,13 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-dynamic-import-node": "^2.3.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "fetch-mock": "^7.5.1",
+    "husky": "^3.0.9",
     "jest-enzyme": "^7.1.1",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "react-test-renderer": "^16.11.0",
     "snazzy": "^8.0.0",
@@ -55,28 +59,45 @@
   "standard": {
     "globals": [
       "it",
+      "xit",
       "describe",
       "fetch",
-      "expect"
+      "expect",
+      "beforeEach",
+      "afterEach",
+      "jest"
     ]
   },
   "jest": {
     "coverageThreshold": {
       "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
         "statements": -10
       }
     },
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/coverage/**",
-      "!**/serviceWorker.js",
-      "!**/index.js",
-      "src/types.js",
-      "src/actionCreators.js"
+      "src/**/*.js",
+      "!src/public/**",
+      "!src/node_modules/**",
+      "!src/coverage/**",
+      "!src/serviceWorker.js",
+      "!src/index.js",
+      "!src/types.js",
+      "!src/config/api.js",
+      "!src/config/store.js",
+      "!src/actionCreators.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:coverage"
+    }
+  },
+  "babel": {
+    "plugins": [
+      "dynamic-import-node"
     ]
   }
 }

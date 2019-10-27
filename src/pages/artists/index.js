@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Button } from 'reactstrap'
 import Loading from 'components/loading'
-import Artist from 'components/artist'
+import Cover from 'components/cover'
 import { useData } from 'hooks'
 import { ReactComponent as PlayIcon } from 'icons/play.svg'
 import { dispatchActionSelectRandomSong } from 'actions'
@@ -32,7 +32,7 @@ const Artists = () => {
         </Col>
       </Row>
       <Row className='justify-content-center mt-2'>
-        {data.data.map((artist, key) => <Artist key={`artist-${key}`} {...artist} />)}
+        {data.data.map((artist, key) => <Cover key={`cover-${key}`} {...artist} />)}
       </Row>
     </>
   )

@@ -1,14 +1,13 @@
 import React from 'react'
 import { Row } from 'reactstrap'
 import Loading from 'components/loading'
-import Artist from 'components/artist'
+import Cover from 'components/cover'
 import { useData } from 'hooks'
 import { useLocation } from 'react-router-dom'
 
 const Albums = () => {
   const { pathname } = useLocation()
   const data = useData(pathname)
-  console.log('data', data)
 
   if (!data.data || data.loading) {
     return <Loading />
@@ -17,9 +16,9 @@ const Albums = () => {
   return (
     <Row>
       {data.data.map((album, key) => (
-        <Artist
+        <Cover
           {...album}
-          key={`artist-${key}`}
+          key={`cover-${key}`}
           isAlbum
         />
       ))}
